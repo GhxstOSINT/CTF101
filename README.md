@@ -211,16 +211,43 @@ Before you can hack a target, you need to know exactly what it is running. This 
 
 ---
 
-## 🤝 Contributing to the Arsenal
+## 📚 OSS Documentation & Contribution Guide
 
-CTF-101 is a "live document." The cybersecurity landscape shifts rapidly. If you have a tool that is faster, easier to use, or more expansive than what is currently listed, we want it in the arsenal.
+CTF-101 is an actively maintained Open Source project. The cybersecurity landscape shifts rapidly, and a tool that wins a CTF today might be obsolete tomorrow. 
 
-### How to Contribute
-1. **Fork the repository:** Create your own copy of the project.
-2. **Create a feature branch:** `git checkout -b add/new-stego-tool`
-3. **Make your changes:** Add the tool using the established format (Ease, Power, What/How, Scenario, Usage).
-4. **Commit and push:** `git commit -m "Add highly detailed breakdown of [Tool Name]"`
-5. **Open a Pull Request:** Explain exactly why this tool deserves a spot on the list.
+We welcome contributions from fellow CTF players, security researchers, and developers. To keep this cheat sheet clean, readable, and highly practical during timed competitions, please follow the documentation standards below.
+
+### 🏗️ Repository Structure
+The arsenal is strictly categorized by CTF domains:
+1. **Part 1:** Network Enumeration & Web Security
+2. **Part 2:** Cryptography, Password Cracking & Esoteric Languages
+3. **Part 3:** Steganography & Forensics
+4. **Part 4:** Reverse Engineering & Binary Exploitation (Pwn)
+
+If your tool doesn't fit into these, open an issue first to discuss adding a new category.
+
+### 📝 The Standard Tool Template
+If you are submitting a Pull Request (PR) to add a new tool, **you must use this exact Markdown format**. We do not want 5-page essays. Keep it punchy, practical, and focused on real-world usage.
+
+Copy this template for your PR:
+
+#### [Tool Name]
+**Ease of Use:** [1-10] | **Power:** [1-10]
+* **What it does & How it works:** [1-2 sentences explaining the tool in plain tech English. No fluff.]
+* **The Scenario:** [A relatable, real-world CTF scenario where you would actually use this tool.]
+* **Usage & Commands:** `[Insert the exact terminal command or web link here]`
+
+### 🛠️ How to Contribute
+1. **Fork the repository** to your local GitHub account.
+2. **Create a feature branch:** `git checkout -b add/your-tool-name`
+3. **Add your tool** using the template above in the correct category section.
+4. **Commit your changes** with a clear message: 
+   `git commit -m "Add [Tool Name] to [Category]"`
+5. **Push to your branch:** `git push origin add/your-tool-name`
+6. **Open a Pull Request (PR)** against the `main` branch of this repository. In your PR description, briefly explain why this tool is a game-changer.
+
+### ⚖️ License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. You are free to use, modify, and distribute this cheat sheet.
 
 ---
-*Maintained with ❤️ for the CTF Community.*
+*Maintained with ❤️ by the open-source CTF community.*
