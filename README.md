@@ -1,21 +1,21 @@
-# 🗡️ CTF-101: The Ultimate Hacker's Arsenal
+# CTF-101: The Ultimate Hacker's Arsenal
 
 > A highly curated, battle-tested collection of the most effective tools for Capture The Flag (CTF) competitions, bridging the gap between raw command-line power and rapid web utilities.
 
 ---
 
-## 📑 Table of Contents
-1. [Introduction & Purpose](#-introduction--purpose)
-2. [Tool Rankings: At a Glance](#-tool-rankings-at-a-glance)
-3. [Part 1: Network Enumeration & Web Security](#-part-1-network-enumeration--web-security)
-4. [Part 2: Cryptography & Esoteric Languages](#-part-2-cryptography-password-cracking--esoteric-languages)
-5. [Part 3: Steganography & Forensics](#-part-3-steganography--forensics)
-6. [Part 4: Reverse Engineering & Binary Exploitation](#-part-4-reverse-engineering--binary-exploitation-pwn)
-7. [Contributing](#-contributing-to-the-arsenal)
+## Table of Contents
+1. [Introduction & Purpose](#introduction--purpose)
+2. [Tool Rankings: At a Glance](#tool-rankings-at-a-glance)
+3. [Part 1: Network Enumeration & Web Security](#part-1-network-enumeration--web-security)
+4. [Part 2: Cryptography & Esoteric Languages](#part-2-cryptography-password-cracking--esoteric-languages)
+5. [Part 3: Steganography & Forensics](#part-3-steganography--forensics)
+6. [Part 4: Reverse Engineering & Binary Exploitation](#part-4-reverse-engineering--binary-exploitation-pwn)
+7. [OSS Documentation & Contribution Guide](#oss-documentation--contribution-guide)
 
 ---
 
-## 🏕️ Introduction & Purpose
+## Introduction & Purpose
 
 Welcome to the ultimate hacker's arsenal. If you've ever found yourself staring at a terminal at 2 AM during a grueling Capture The Flag (CTF) competition, wondering which of the hundred different scanning tools you are supposed to use, this repository is for you.
 
@@ -34,7 +34,7 @@ To effectively use this repository and succeed in competitions, you must adopt t
 
 ---
 
-## 🏆 Tool Rankings: At a Glance
+## Tool Rankings: At a Glance
 
 We rank tools based on **Ease of Use (1-10)** and **Power/Expansiveness (1-10)**. 
 
@@ -51,11 +51,11 @@ We rank tools based on **Ease of Use (1-10)** and **Power/Expansiveness (1-10)**
 
 ---
 
-## 🌐 Part 1: Network Enumeration & Web Security
+## Part 1: Network Enumeration & Web Security
 
 Before you can hack a target, you need to know exactly what it is running. This section covers the "low-hanging fruit" of port scanning, Samba shares, and web application vulnerabilities. 
 
-### 📡 Network & Port Enumeration Tools
+### Network & Port Enumeration Tools
 
 #### 1. smbmap
 **Ease of Use:** 7/10 | **Power:** 8/10
@@ -81,7 +81,7 @@ Before you can hack a target, you need to know exactly what it is running. This 
 * **The Scenario:** You find database credentials in some leaked source code. You use this tool to log in, but instead of just stealing tables, you tell the database to run `whoami` on the host machine. Boom, remote code execution.
 * **Usage & Commands:** `mssqlclient.py username@<TARGET_IP> -windows-auth` then type `SQL> enable_xp_cmdshell`
 
-### 🕸️ Web Security Tools
+### Web Security Tools
 
 #### 5. EditThisCookie
 **Ease of Use:** 10/10 | **Power:** 6/10
@@ -101,9 +101,9 @@ Before you can hack a target, you need to know exactly what it is running. This 
 
 ---
 
-## 🔒 Part 2: Cryptography, Password Cracking & Esoteric Languages
+## Part 2: Cryptography, Password Cracking & Esoteric Languages
 
-### 🔑 Hash Cracking & Identification
+### Hash Cracking & Identification
 
 #### 1. Hash Identifier & CrackStation
 **Ease of Use:** 10/10 | **Power:** 9/10
@@ -116,7 +116,7 @@ Before you can hack a target, you need to know exactly what it is running. This 
 * **The Scenario:** You know the target's server PIN is exactly 4 digits. You tell Crunch to make a list from 0000 to 9999, which you then feed into your password cracker to automate the guessing.
 * **Usage & Commands:** `crunch 4 4 0123456789 -o pin_list.txt`
 
-### 🧮 Classical & Modern Cryptography
+### Classical & Modern Cryptography
 
 #### 3. dCode.fr & QuipQuip
 **Ease of Use:** 10/10 | **Power:** 10/10
@@ -124,13 +124,12 @@ Before you can hack a target, you need to know exactly what it is running. This 
 * **The Scenario:** You find a message that looks like gibberish (`khoor zruog`). You drop it into dCode's Caesar Cipher tool, and it instantly shifts the letters back to read `hello world`.
 
 #### 4. RsaCtfTool & FactorDB
-
 **Ease of Use:** 5/10 | **Power:** 10/10
 * **What it does & How it works:** RSA encryption relies on multiplying giant prime numbers. If the numbers are too small or generated poorly, this Python script uses heavy math to factor them and crack the private key.
 * **The Scenario:** A challenge gives you a locked file and a public key. You run this tool, it realizes the CTF creator used weak math, factors the primes, and decrypts the file for you automatically.
 * **Usage & Commands:** `python3 RsaCtfTool.py -n <modulus> -e <exponent> --uncipher <ciphertext>`
 
-### 👽 Esoteric & Joke Languages
+### Esoteric & Joke Languages
 
 #### 5. Brainfuck, Ook! & Rockstar
 * **What it does & How it works:** Joke programming languages designed to look like gibberish. They compile and run like real code but use weird syntax. Brainfuck uses only punctuation (`> < + - . , [ ]`). Rockstar disguises code as 1980s hair metal lyrics.
@@ -138,9 +137,9 @@ Before you can hack a target, you need to know exactly what it is running. This 
 
 ---
 
-## 🎨 Part 3: Steganography & Forensics
+## Part 3: Steganography & Forensics
 
-### 🖼️ Steganography (Images & Audio)
+### Steganography (Images & Audio)
 
 #### 1. Aperi'Solve
 **Ease of Use:** 10/10 | **Power:** 9/10
@@ -148,7 +147,6 @@ Before you can hack a target, you need to know exactly what it is running. This 
 * **The Scenario:** You are given a picture of a cat. You upload it to Aperi'Solve, and it finds a secret hidden zip file buried inside the image's hex code that you couldn't see with the naked eye.
 
 #### 2. Stegsolve.jar
-
 **Ease of Use:** 8/10 | **Power:** 8/10
 * **What it does & How it works:** A tool that acts like X-ray glasses for images. It lets you strip away specific color layers (Red, Green, Blue) to see what's hidden underneath.
 * **The Scenario:** An image looks entirely black. You load it up, filter out the Red and Green layers, and in the isolated Blue layer, a hidden QR code appears.
@@ -160,12 +158,11 @@ Before you can hack a target, you need to know exactly what it is running. This 
 * **Usage & Commands:** `stegseek target_image.jpg rockyou.txt`
 
 #### 4. Sonic Visualizer
-
 **Ease of Use:** 8/10 | **Power:** 7/10
 * **What it does & How it works:** Software that turns sound waves into visual graphs (spectrograms), allowing you to "see" the frequencies of audio.
 * **The Scenario:** You download a `.wav` file that sounds like old dial-up internet screeching. You look at the spectrogram, and the frequencies literally draw the words "FLAG FOUND" across the screen.
 
-### 🕵️‍♂️ Digital Forensics & File Carving
+### Digital Forensics & File Carving
 
 #### 5. Binwalk & Hachoir-Subfile
 **Ease of Use:** 7/10 | **Power:** 10/10
@@ -174,24 +171,22 @@ Before you can hack a target, you need to know exactly what it is running. This 
 * **Usage & Commands:** `binwalk -e target_file`
 
 #### 6. Autopsy
-
 **Ease of Use:** 6/10 | **Power:** 10/10
 * **What it does & How it works:** Professional digital forensics software. It reads raw hard drive dumps and bypasses the operating system to find files that were "deleted" but not fully overwritten on the disk.
 * **The Scenario:** The challenge gives you a USB drive image. The suspect "deleted" their chat logs. You load the image into Autopsy, click the "Deleted Files" tab, and recover the chat logs instantly.
 
 ---
 
-## ⚙️ Part 4: Reverse Engineering & Binary Exploitation (Pwn)
+## Part 4: Reverse Engineering & Binary Exploitation (Pwn)
 
-### 📱 Mobile & Java Reversing
+### Mobile & Java Reversing
 
 #### 1. JADX-GUI & MobSF
-
 **Ease of Use:** 9/10 | **Power:** 10/10
 * **What it does & How it works:** Decompilers for Android. They take the compiled, unreadable app (`.apk`) and reverse-engineer it back into human-readable Java code. 
 * **The Scenario:** You need a premium key for an app. You load the APK into JADX, search the code for the word "password", and find the developer accidentally left the admin login hardcoded in plain text.
 
-### 💻 .NET, Python & C/C++ Reversing
+### .NET, Python & C/C++ Reversing
 
 #### 2. dnSpy
 **Ease of Use:** 9/10 | **Power:** 10/10
@@ -204,20 +199,19 @@ Before you can hack a target, you need to know exactly what it is running. This 
 * **The Scenario:** You have a compiled Linux binary (`.elf`). You upload it, and DogBolt translates the raw machine code back into C++ so you can see exactly how the program handles memory.
 
 #### 4. Buffer Overflow Basics (readelf & dmesg)
-
 **Ease of Use:** 4/10 | **Power:** 10/10
 * **What it does & How it works:** Exploiting bad memory management. If a program asks for your name and only expects 10 letters, giving it 100 letters might overflow into critical system memory. You can use this overflow to overwrite the "Instruction Pointer" and take control of the program.
 * **The Scenario:** You type a massive string of "A"s into an input box. The program crashes. You use `dmesg` to see exactly where it crashed, and `readelf` to find the address of a hidden "admin" function. You then craft an input that perfectly overwrites the memory to trigger that admin function and print the flag.
 
 ---
 
-## 📚 OSS Documentation & Contribution Guide
+## OSS Documentation & Contribution Guide
 
 CTF-101 is an actively maintained Open Source project. The cybersecurity landscape shifts rapidly, and a tool that wins a CTF today might be obsolete tomorrow. 
 
 We welcome contributions from fellow CTF players, security researchers, and developers. To keep this cheat sheet clean, readable, and highly practical during timed competitions, please follow the documentation standards below.
 
-### 🏗️ Repository Structure
+### Repository Structure
 The arsenal is strictly categorized by CTF domains:
 1. **Part 1:** Network Enumeration & Web Security
 2. **Part 2:** Cryptography, Password Cracking & Esoteric Languages
@@ -226,7 +220,7 @@ The arsenal is strictly categorized by CTF domains:
 
 If your tool doesn't fit into these, open an issue first to discuss adding a new category.
 
-### 📝 The Standard Tool Template
+### The Standard Tool Template
 If you are submitting a Pull Request (PR) to add a new tool, **you must use this exact Markdown format**. We do not want 5-page essays. Keep it punchy, practical, and focused on real-world usage.
 
 Copy this template for your PR:
@@ -237,7 +231,7 @@ Copy this template for your PR:
 * **The Scenario:** [A relatable, real-world CTF scenario where you would actually use this tool.]
 * **Usage & Commands:** `[Insert the exact terminal command or web link here]`
 
-### 🛠️ How to Contribute
+### How to Contribute
 1. **Fork the repository** to your local GitHub account.
 2. **Create a feature branch:** `git checkout -b add/your-tool-name`
 3. **Add your tool** using the template above in the correct category section.
@@ -246,8 +240,8 @@ Copy this template for your PR:
 5. **Push to your branch:** `git push origin add/your-tool-name`
 6. **Open a Pull Request (PR)** against the `main` branch of this repository. In your PR description, briefly explain why this tool is a game-changer.
 
-### ⚖️ License
+### License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. You are free to use, modify, and distribute this cheat sheet.
 
 ---
-*Maintained with ❤️ by the open-source CTF community.*
+*Maintained by the open-source CTF community.*
